@@ -19,5 +19,8 @@
   "homepage": "https://github.com/guilhermelemke/API_Testing_Cypress#readme",
   "devDependencies": {
     "cypress": "^6.2.1"
+  },
+  "dependencies": {
+    "faker": "^5.1.0"
   }
 }
