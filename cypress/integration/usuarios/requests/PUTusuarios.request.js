@@ -1,7 +1,5 @@
 /// <reference types="cypress"/>
 
-const payloadUser = require('../payloads/edit-user.json');
-
 function editUser(id, obj) {
     // Caso não receba Id
     // gera um Id randômico para o test case de editar usuário (Id inexistente)

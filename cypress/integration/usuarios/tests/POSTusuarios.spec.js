@@ -1,6 +1,5 @@
-import { registerUser, registerExistingUser } from '../requests/POSTusuarios.request';
+import { registerUser } from '../requests/POSTusuarios.request';
 import { deleteUser } from '../requests/DELETEusuarios.request';
-import { getAllUsers } from '../requests/GETusuarios.request';
 
 let user;
 
