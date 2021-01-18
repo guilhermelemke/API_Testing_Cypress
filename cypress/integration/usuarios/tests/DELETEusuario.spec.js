@@ -1,9 +1,22 @@
 import { registerUser } from '../requests/POSTusuarios.request';
 import { deleteUser } from '../requests/DELETEusuarios.request';
 
+let user;
+
 describe('POST usuarios', () => {
+    beforeEach(() => {
+        cy.task("freshUser").then((object) => {
+            user = object;
+        })
+    })
+
     it('Deleta um usuário', () => {
-        registerUser().then(responseUser => {
+        registerUser({
+            nome: user.username,
+            email: user.email,
+            password: user.password,
+            administrador: "true"
+        }).then(responseUser => {
             deleteUser(responseUser.body._id).should(responseDeleteUser => {
                 expect(responseDeleteUser.status).to.eq(200);
                 expect(responseDeleteUser.body.message).to.eq("Registro excluído com sucesso");
@@ -12,7 +25,12 @@ describe('POST usuarios', () => {
     })
 
     it('Tenta deletar um usuário inexistente', () => {
-        registerUser().then(responseUser => {
+        registerUser({
+            nome: user.username,
+            email: user.email,
+            password: user.password,
+            administrador: "true"
+        }).then(responseUser => {
             deleteUser(responseUser.body._id).then(() => {
                 deleteUser(responseUser.body._id).should(responseDeleteUser => {
                 expect(responseDeleteUser.status).to.eq(200);
