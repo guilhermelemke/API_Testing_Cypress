@@ -13,12 +13,7 @@ describe('PUT usuarios', () => {
     })
 
     it('Cadastra usuário por não existir id', () => {
-            editUser("", {
-                nome: user.username,
-                email: user.email,
-                password: user.password,
-                administrador: "true"
-            }).should(response => {
+            editUser("", user).should(response => {
                 expect(response.status).to.eq(201);
                 expect(response.body.message).to.eq("Cadastro realizado com sucesso");
                 deleteUser(response.body._id)
@@ -26,18 +21,8 @@ describe('PUT usuarios', () => {
         })    
 
     it('Edita usuário', () => {
-        registerUser({
-            nome: user.username,
-            email: user.email,
-            password: user.password,
-            administrador: "true"
-        }).then(responseUser => {
-            editUser(responseUser.body._id, {
-                nome: user.username,
-                email: user.email,
-                password: user.password,
-                administrador: "true"
-            }).should(response => {
+        registerUser(user).then(responseUser => {
+            editUser(responseUser.body._id, user).should(response => {
                 expect(response.status).to.eq(200);
                 expect(response.body.message).to.eq("Registro alterado com sucesso");
                 deleteUser(responseUser.body._id)
@@ -48,7 +33,7 @@ describe('PUT usuarios', () => {
     it('Tenta editar usuário (alterar email para um já existente)', () => {
         getAllUsers().then(responseUsers => {
             editUser(responseUsers.body.usuarios[0]._id, {
-                nome: user.username,
+                nome: user.nome,
                 email: responseUsers.body.usuarios[1].email,
                 password: user.password,
                 administrador: "true"
