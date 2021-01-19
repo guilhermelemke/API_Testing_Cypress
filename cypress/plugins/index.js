@@ -10,11 +10,23 @@ module.exports = (on, config) => {
   on("task", {
     freshUser() {
       user = {
-        username: faker.name.firstName(),
+        nome: faker.name.firstName(),
         email: faker.internet.email(),
-        password: "newPassword"
+        password: faker.internet.password(),
+        administrador: "true"
       };
       return user;
     }
-  });
+  }),
+  on("task", {
+    newProduct() {
+      product = {
+        nome: faker.commerce.productName(),
+        preco: faker.commerce.price(),
+        descricao: faker.commerce.productDescription(),
+        quantidade: faker.random.number()
+      };
+      return product;
+    }
+  })
 }
