@@ -1,6 +1,6 @@
 # Automação da API do Site: https://serverest.dev/
 
-O projeto foi desenvolvido utilizando Cypress e o padrão Page Objects. Com o uso da biblioteca faker para criação de dados.
+O projeto foi desenvolvido utilizando Cypress. Com o uso da biblioteca faker para criação de dados.
 
 ## Objetivo
 
@@ -11,6 +11,9 @@ Testar as funcionalidades da API nos seguintes cenários:
 * Validar verificações realizadas no cadastro de usuário;
 * Validar Edição de um usuário;
 * Validar Exclusão de um usuário.
+
+  Testes no Endpoint /produtos:
+* Validar produtos cadastrados com sucesso;
 
 ## Pré requisitos para rodar o projeto:
 
