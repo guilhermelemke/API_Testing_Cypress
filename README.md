@@ -1,4 +1,5 @@
 # Automação da API do Site: https://serverest.dev/
+[![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/PauloGoncalvesBH/ServeRest/)
 
 O projeto foi desenvolvido utilizando Cypress. Com o uso da biblioteca faker para criação de dados.
 
