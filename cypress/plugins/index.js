@@ -16,9 +16,7 @@ module.exports = (on, config) => {
         administrador: "true"
       };
       return user;
-    }
-  }),
-  on("task", {
+    },
     newProduct() {
       product = {
         nome: faker.commerce.productName(),

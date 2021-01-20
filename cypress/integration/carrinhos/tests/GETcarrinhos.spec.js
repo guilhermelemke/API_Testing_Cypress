@@ -37,8 +37,4 @@ describe('GET carrinhos', () => {
             })
         })
     })
-
-    it('Retorna os carrinhos com mais de 5 produtos', () => {
-        
-    })
 })

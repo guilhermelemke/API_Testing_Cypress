@@ -1,6 +1,5 @@
 import { registerUser } from '../requests/POSTusuarios.request';
 import { editUser } from '../requests/PUTusuarios.request';
-import { deleteUser } from '../requests/DELETEusuarios.request';
 import { getAllUsers } from '../requests/GETusuarios.request';
 
 let user;
@@ -16,7 +15,6 @@ describe('PUT usuarios', () => {
             editUser("", user).should(response => {
                 expect(response.status).to.eq(201);
                 expect(response.body.message).to.eq("Cadastro realizado com sucesso");
-                deleteUser(response.body._id)
             })
         })    
 
@@ -25,7 +23,6 @@ describe('PUT usuarios', () => {
             editUser(responseUser.body._id, user).should(response => {
                 expect(response.status).to.eq(200);
                 expect(response.body.message).to.eq("Registro alterado com sucesso");
-                deleteUser(responseUser.body._id)
             })   
         })
     })
