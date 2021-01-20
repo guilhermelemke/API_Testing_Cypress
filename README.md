@@ -15,10 +15,12 @@ Testar as funcionalidades da API nos seguintes cenários:
 
   Testes no Endpoint /produtos:
 * Validar produtos cadastrados com sucesso;
+* Validar o estoque de um produto após venda ou cancelamento de venda;
 
 ## Pré requisitos para rodar o projeto:
 
 * Node versão 10 ou superior
+* GIT
 
 ## Como rodar o projeto:
 
@@ -30,11 +32,18 @@ Testar as funcionalidades da API nos seguintes cenários:
 * Ative o Cypress:  
 ```npm run cypress:open ```
 
-* Executa os testes de listagem de contas no site:
+
+* Executa os testes de listagem de contas:
 ```GETusuarios.spec.js ```
-* Executa os testes de cadastro de usuários no site:   
+* Executa os testes de cadastro de usuários:   
 ```POSTusuarios.spec.js ```
-* Executa os testes de edição de conta no site:   
+* Executa os testes de edição de conta:   
 ```PUTusuarios.spec.js ```
-* Executa os testes de deleção de contas no site:
+* Executa os testes de deleção de contas:
 ```DELETEusuario.spec.js ```
+* Executa os testes de cadastro de produtos:
+```POSTprodutos.spec.js ```
+* Executa os testes de estoque de produtos:
+```GETprodutos.spec.js ```
+* Executa os testes de cadastro de carrinhos:
+```POSTcarrinhos.spec.js ```

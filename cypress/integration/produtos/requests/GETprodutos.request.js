@@ -1,11 +1,11 @@
 /// <reference types="cypress"/>
 
-function getAllCarts() {
+function getProduct(id) {
     return cy.request({
         method: 'GET',
-        url: `carrinhos?quantidadeTotal%3c=5`,
+        url: `produtos?_id=${id}`,
         failOnStatusCode: false,
     })
 }
 
-export { getAllUsers };
+export { getProduct };
