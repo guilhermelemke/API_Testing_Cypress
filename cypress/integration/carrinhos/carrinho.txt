@@ -1,0 +1,12 @@
+1 - Get allUsers
+
+2 - registerCart -
+    criar e colocar 6 produtos no carrinho user[0]
+
+3 - registerCart - 
+    criar e colocar 6 produtos no carrinho user[1]
+
+4 - registerCard -
+    criar e colocar 6 produtos no carrinho user[2]
+
+5 - Return carrinhos com mais de 5 produtos, no mínimo 3 carrinhos
