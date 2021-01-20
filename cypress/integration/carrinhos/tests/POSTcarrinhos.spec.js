@@ -6,7 +6,7 @@ import { registerCart } from '../requests/POSTcarrinhos.request';
 let user;
 let product;
 
-describe('GET carrinhos', () => {
+describe('POST carrinhos', () => {
     beforeEach(() => {
         cy.task("freshUser").then((object) => {
             user = object;
